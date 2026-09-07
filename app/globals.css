@@ -123,3 +123,45 @@ h3 { font-size:1.25rem; font-weight:600; line-height:1.3; letter-spacing:-.5px; 
 .contact-details a,.footer-social { display:inline-flex; align-items:center; gap:9px; width:fit-content; }
 .contact-details a:hover,.footer-social:hover { text-decoration:underline; text-underline-offset:4px; }
 .contact-details svg,.footer-social svg { flex-shrink:0; }
+
+/* Short, action-driven feedback. Hover movement only applies to precise pointers. */
+:root { --feedback-ease:cubic-bezier(.2,.8,.2,1); }
+.contact-button { transition:background 180ms ease,box-shadow 180ms ease,transform 180ms var(--feedback-ease); }
+.contact-button svg:last-child,.text-link svg,.contact-details a svg:last-child { transition:transform 180ms var(--feedback-ease); }
+.site-header nav a,.text-link,.site-footer a { position:relative; }
+.site-header nav a::after,.text-link::after { content:''; position:absolute; bottom:5px; left:0; width:100%; height:2px; background:currentColor; transform:scaleX(0); transform-origin:left; transition:transform 180ms var(--feedback-ease); }
+.text-link::after { bottom:-4px; }
+.site-header nav a { transition:color 180ms ease; }
+.site-header nav a:focus-visible,.text-link:focus-visible { color:var(--accent); }
+.site-header nav a:focus-visible::after,.text-link:focus-visible::after { transform:scaleX(1); }
+.contact-button:focus-visible { box-shadow:0 0 0 5px #087b7926; }
+.contact-button:not(:disabled):focus-visible svg:last-child,.text-link:focus-visible svg { transform:translate(2px,-2px); }
+.faq-item { transition:border-color 200ms ease,background-color 200ms ease; }
+.faq-item[data-open] { border-bottom-color:#087b79; background-color:#edf5f580; }
+.faq-list .faq-question { cursor:pointer; transition:color 180ms ease; }
+.faq-list .faq-question[aria-expanded='true'],.faq-list .faq-question:focus-visible { color:#08716d; }
+.faq-list .faq-question:focus-visible { outline:3px solid var(--ring); outline-offset:3px; }
+
+@media(hover:hover) and (pointer:fine) {
+  .site-header nav a:hover::after,.text-link:hover::after { transform:scaleX(1); }
+  .contact-button:not(:disabled):hover { box-shadow:0 6px 16px #12374b26; }
+  .contact-button:not(:disabled):hover svg:last-child,.text-link:hover svg,.contact-details a[target='_blank']:hover svg:last-child { transform:translate(2px,-2px); }
+  .faq-list .faq-question:hover { color:#08716d; }
+}
+@media(hover:none), (pointer:coarse) {
+  .contact-button:hover { transform:none; }
+}
+.contact-button:not(:disabled):active { transform:translateY(1px) scale(.98); box-shadow:none; transition-duration:80ms; }
+.site-header nav a:active,.text-link:active,.contact-details a:active,.site-footer a:active { opacity:.7; }
+.faq-list .faq-question:active { color:#08716d; background:#e3efef; }
+
+@keyframes destination-feedback {
+  0%,35% { text-decoration-color:#249f9180; }
+  100% { text-decoration-color:transparent; }
+}
+@media(prefers-reduced-motion:no-preference) {
+  section:target h2,main:target h1 { text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:8px; text-decoration-color:transparent; animation:destination-feedback 900ms ease-out; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .contact-button:not(:disabled):hover,.contact-button:not(:disabled):active,.contact-button:not(:disabled):focus-visible svg:last-child,.contact-button:not(:disabled):hover svg:last-child,.text-link:hover svg,.text-link:focus-visible svg,.contact-details a[target='_blank']:hover svg:last-child { transform:none; }
+}
