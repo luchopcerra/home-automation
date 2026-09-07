@@ -8,6 +8,13 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "build:cloudflare": "npm run check:publish && vinext build --mode cloudflare",
+    "deploy": "npm run build:cloudflare && npm run deploy:cloudflare",
+    "deploy:cloudflare": "wrangler deploy --config dist/server/wrangler.json",
+    "deploy:check": "npm run build:cloudflare && npm run deploy:cloudflare -- --dry-run",
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami",
+    "cf:types": "wrangler types --config wrangler.cloudflare.jsonc --env-interface CloudflareEnv .wrangler/worker-configuration.d.ts",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt",
