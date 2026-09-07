@@ -1,4 +1,6 @@
 export const site = {
+  // Public HTTPS origin. Set this when the site is ready for public indexing.
+  url: '',
   name: 'Luciano',
   service: 'Domótica',
   area: 'Los Reartes · Villa General Belgrano',
@@ -18,4 +20,18 @@ export function whatsappUrl(number: string = site.whatsapp): string | null {
   return /^[1-9]\d{7,14}$/.test(number)
     ? `https://wa.me/${number}?text=${encodeURIComponent(site.message)}`
     : null;
+}
+
+export function siteUrl(value: string = site.url): string | null {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:' || url.username || url.password || url.pathname !== '/' || url.search || url.hash || !url.hostname.includes('.') || url.hostname.endsWith('.localhost') || url.hostname === '127.0.0.1') return null;
+    return url.origin;
+  } catch {
+    return null;
+  }
+}
+
+export function isIndexable(): boolean {
+  return Boolean(siteUrl() && whatsappUrl());
 }

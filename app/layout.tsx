@@ -1,11 +1,24 @@
 import type { Metadata } from 'next';
-import { site, whatsappUrl } from '@/lib/site';
+import { isIndexable, site, siteUrl } from '@/lib/site';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl() ? new URL(siteUrl()!) : undefined,
   title: site.title,
   description: site.description,
-  robots: whatsappUrl() ? { index: true, follow: true } : { index: false, follow: false },
+  alternates: siteUrl() ? { canonical: `${siteUrl()}/` } : undefined,
+  robots: isIndexable()
+    ? { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 }
+    : { index: false, follow: false },
+  openGraph: {
+    type: 'website',
+    locale: 'es_AR',
+    siteName: `${site.name} ${site.service}`,
+    title: site.title,
+    description: site.description,
+    ...(siteUrl() ? { url: `${siteUrl()}/` } : {}),
+  },
+  twitter: { card: 'summary', title: site.title, description: site.description },
   icons: { icon: '/favicon.svg' },
 };
 
