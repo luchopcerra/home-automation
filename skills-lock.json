@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "skills": {
+    "agents-sdk": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "a9f1d15143627d772d318e8675f8a26999d372592d21a2134d25c2ed15ebc8e5",
+      "wellKnownDigest": "sha256:80334f6a13490339c14822b5843b0f95012430ea9ce0a08df8a58db408ffb04f"
+    },
+    "ai-seo": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/ai-seo/SKILL.md",
+      "computedHash": "2b2dc6fe6156b9338e1b181670b1c3e2b215d980327f3bbd5aff9d069decd56d"
+    },
+    "cloudflare-one": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "b59b87e0f533dce3bf32d7e46f6f14f1d01bab5158b59679c8f4644522df3447",
+      "wellKnownDigest": "sha256:86e48146f0984904051742cd524ea687e07ac87bf3c3a4a399e254bd2985bf0c"
+    },
+    "durable-objects": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "39266b1d6b680c584cc7f75459a2b7eb428a06f6b5f4e95d45a8aa7454fbf53e",
+      "wellKnownDigest": "sha256:ee21c449a84d6de911026230f51d0037fa96be9725b96a5b7edcc1ea2a407600"
+    },
+    "micro-interaction-spec": {
+      "source": "owl-listener/designer-skills",
+      "sourceType": "github",
+      "skillPath": "interaction-design/skills/micro-interaction-spec/SKILL.md",
+      "computedHash": "3333d7898daf18fb194d51aaafb077861e306b9c1d7b07ad976cd4e8b40ffe47"
+    },
+    "nextjs-on-cloudflare": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "bd6ffed7a3d8ed0fcddedb370f64808750b1f5a7d9f4c70fd1ba6cb4c7933b12",
+      "wellKnownDigest": "sha256:c50143ab00aeb8ab388b32f0e9c84b7b3e9cad1b5b39d364e1e4573d68ec8d32"
+    },
+    "sandbox-next": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "e399a6cadee9ce2a48731c796f1d89e7b7a84cbe45f1ecf9da5c235b41133b95",
+      "wellKnownDigest": "sha256:b830905b25fcdd17b4d669e4bf898ebfac870ce5dfaa7c55a6d8e2bb71b0c46f"
+    },
+    "sandbox-stable": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "1b77b09631eb6c01d4b2d5c97afd7e24fd588d6fa8c8dc421abeb7acdf26d2bb",
+      "wellKnownDigest": "sha256:4083e3bd6d1345a19c42037930750a84ef92af2a440dbac939efd9c2c9a41b3f"
+    },
+    "seo-audit": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/seo-audit/SKILL.md",
+      "computedHash": "01f9f8a3feb3ea69c6c212d61189c610f96ef2cc363adc27fd314d78254bf6ae"
+    },
+    "web-perf": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "72d0dd9706147e19bf3c1a36fdc02570f77685541d89d901a3a2f570824ba3cb",
+      "wellKnownDigest": "sha256:79c531e95ca4d96a7de920c28c127c2c09ec55cd452a92222267d2954580be23"
+    },
+    "workers-best-practices": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "61834fa098e16280aae54e584f5a16e047391790b1e1e4995c0e9a111d6d75c3",
+      "wellKnownDigest": "sha256:3bbb40f67d72397f3999176afab04e0f6a0cad8235d627ff8d352bde9f838187"
+    },
+    "wrangler": {
+      "source": "developers.cloudflare.com",
+      "sourceUrl": "https://developers.cloudflare.com/",
+      "sourceType": "well-known",
+      "computedHash": "ad1ea153cb8cf6845af15281e67e5d24fbf35b6626ab01a1e44d6a0bc57144c2",
+      "wellKnownDigest": "sha256:98340231ddb97ea0d742ea6646fd4a36074a8b7030de51f4762469277dd2d7f0"
+    }
+  }
+}
